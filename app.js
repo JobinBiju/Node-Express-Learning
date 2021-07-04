@@ -1,14 +1,22 @@
-const http = require("http");
+const http = require('http');
 
 const server = http.createServer((req, res) => {
-    console.log(req.url, req.method, req.headers);
-    // process.exit();
-    res.setHeader("Content-Type", "text/html");
-    res.write("<html>");
-    res.write("<head><title>First Node.js</title></head>");
-    res.write("<body><H1>Hello from my Node.js server!</H1></body>");
-    res.write("</html>");
-    res.end();
+  const url = req.url;
+  if (url === '/') {
+    res.write('<html>');
+    res.write('<head><title>Enter Message</title></head>');
+    res.write(
+      '<body><form action"/message" method="POST"><input type="text" name="ClickMe"><button type="submit">Submit</button></form></body>',
+    );
+    res.write('</html>');
+    return res.end();
+  }
+  res.setHeader('Content-Type', 'text/html');
+  res.write('<html>');
+  res.write('<head><title>First Node.js</title></head>');
+  res.write('<body><H1>Hello from my Node.js server!</H1></body>');
+  res.write('</html>');
+  res.end();
 });
 
 server.listen(3000);
