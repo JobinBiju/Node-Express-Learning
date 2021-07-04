@@ -1,5 +1,8 @@
 const http = require("http");
 
-function rqListener(req, res) {}
+function rqListener(req, res) {
+    console.log(req);
+}
 
-http.createServer(rqListener);
+const server = http.createServer(rqListener);
+server.listen(3000);
