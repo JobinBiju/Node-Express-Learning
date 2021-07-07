@@ -1,6 +1,6 @@
 import { createServer } from 'http';
 
-import { handler } from './routes';
+import { handler, someText } from './routes.js';
 
 const server = createServer(handler);
 
