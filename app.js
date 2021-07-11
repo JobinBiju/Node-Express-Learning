@@ -1,9 +1,8 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 
 const app = express();
 
-app.use(bodyParser.urlencoded())
+app.use(express.urlencoded());
 
 app.use('/add-product', (req, res, next) => {
   console.log('Just another middleware ');
