@@ -11,4 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(adminRoutes.default);
 app.use(shopRoutes.default);
 
+app.use((req, res, next) => {
+  res.status(404).send('<H1>Page not found</H1>');
+});
+
 app.listen(port);
