@@ -8,7 +8,7 @@ const port = 3000;
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use(adminRoutes.default);
+app.use('/admin', adminRoutes.default);
 app.use(shopRoutes.default);
 
 app.use((req, res, next) => {
