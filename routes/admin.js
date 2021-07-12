@@ -6,7 +6,7 @@ const __dirname = path.resolve();
 
 router.get('/add-product', (req, res, next) => {
   console.log('Just another middleware');
-  res.sendFile(path.join(__dirname, './', 'views', 'add-product.html'));
+  res.sendFile(path.join(__dirname, 'views', 'add-product.html'));
 });
 router.post('/add-product', (req, res, next) => {
   console.log(req.body['title']);
