@@ -8,7 +8,8 @@ const app = express();
 const port = 3000;
 global.appRoot = path.resolve();
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(appRoot, 'public')));
 
 app.use('/admin', adminRoutes.default);
 app.use(shopRoutes.default);
