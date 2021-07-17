@@ -5,7 +5,8 @@ import * as admin from '../routes/admin.js';
 
 const router = express.Router();
 router.get('/', (req, res, next) => {
-  res.sendFile(path.join(appRoot, 'views', 'shop.html'));
+  res.render('shop');
+  // res.sendFile(path.join(appRoot, 'views', 'shop.html'));
   console.log(admin.products);
 });
 
