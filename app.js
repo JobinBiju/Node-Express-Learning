@@ -8,6 +8,8 @@ const app = express();
 const port = 3000;
 global.appRoot = path.resolve();
 
+app.set();
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(appRoot, 'public')));
 
