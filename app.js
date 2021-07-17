@@ -8,7 +8,8 @@ const app = express();
 const port = 3000;
 global.appRoot = path.resolve();
 
-app.set();
+app.set('view engine', 'pug'); // setting pug as default template engine
+app.set('views', 'views'); // location to find the views
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(appRoot, 'public')));
