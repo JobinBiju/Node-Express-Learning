@@ -18,7 +18,7 @@ app.use('/admin', admin.router);
 app.use(shop.router);
 
 app.use((req, res, next) => {
-  res.status(404).sendFile(path.join(appRoot, 'views', '404.html'));
+  res.status(404).render('404');
 });
 
 app.listen(port);
