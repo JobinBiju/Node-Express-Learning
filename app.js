@@ -9,9 +9,15 @@ const app = express();
 const port = 3000;
 global.appRoot = path.resolve();
 
-app.engine('hbs', expressHbs);
-
-app.set('view engine', 'hbs'); // setting pug as default template engine
+app.engine(
+  'hbs',
+  expressHbs({
+    layoutsDir: 'views/layouts/',
+    defaultLayout: 'main-layout',
+    extname: 'hbs',
+  }),
+);
+app.set('view engine', 'hbs'); // setting handlebars as default template engine
 app.set('views', 'views'); // location to find the views
 
 app.use(express.urlencoded({ extended: false }));
